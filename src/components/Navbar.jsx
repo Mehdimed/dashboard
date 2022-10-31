@@ -12,9 +12,9 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
         <CaretDoubleRight className={`absolute cursor-pointer ease-in-out duration-500 ${isOpen ? '-rotate-180 translate-x-24' : '' }`} size={32} onClick={()=>{setIsOpen(!isOpen)}} />
 
-          <img src={cat} alt='cat' className={`w-28 rounded-full bg-firefox ease-in-out duration-500 ${isOpen ? 'opacity-100' : 'opacity-0 -translate-x-20' }`}/>
+          <img src={cat} alt='cat' className={`rounded-full bg-firefox ease-in-out duration-500 ${isOpen ? 'w-28' : 'w-10 translate-y-4' }`}/>
 
-          <div className={`text-white text-xl ease-in-out duration-500 mt-2 ${isOpen ? 'opacity-100' : 'opacity-0 -translate-x-20' }`}>Mehdimed</div>
+          <div className={`text-white text-xl ease-in-out duration-500 mt-2 ${isOpen ? '' : 'text-sm opacity-0 translate-y-4' }`}>Mehdimed</div>
 
           <div className={`w-full h-full pt-8 flex flex-col items-start gap-3 text-sm`}>
 
