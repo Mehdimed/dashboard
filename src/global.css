@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+
+  .running {
+    animation-play-state: running;
+  }
+}
+
 *,
 *::before,
 *::after {

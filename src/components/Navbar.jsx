@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CaretDoubleRight, House,UsersFour, AddressBook , Handshake , UserCirclePlus, Calendar, Question, ChartBar ,ChartPie, ChartLineUp ,MapTrifold} from 'phosphor-react'
 import  cat  from '../assets/cat.png'
@@ -18,69 +18,40 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
           <div className={`w-full h-full pt-8 flex flex-col items-start gap-3 text-sm`}>
 
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <House size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Tableau de bord</div>
-            </Link>
+            <NavLink isOpen={isOpen} label='Tableau de bord' to='/' icon={House}/>
 
             <div className={`relative font-semibold text-gray-400 ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Data</div>
 
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <UsersFour size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Gestion team</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <AddressBook size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Clients</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <Handshake size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Transactions</div>
-            </Link>
+            <NavLink isOpen={isOpen} label='Gestion team' to='/' icon={UsersFour}/>
+            <NavLink isOpen={isOpen} label='Clients' to='/' icon={AddressBook}/>
+            <NavLink isOpen={isOpen} label='Transactions' to='/' icon={Handshake}/>
 
             <div className={`relative font-semibold text-gray-400 ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Outils</div>
             
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <UserCirclePlus size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Ajout Client</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <Calendar size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Calendrier</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <Question size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>FAQ</div>
-            </Link>
+            <NavLink isOpen={isOpen} label='Ajout client' to='/' icon={UserCirclePlus}/>
+            <NavLink isOpen={isOpen} label='Calendrier' to='/' icon={Calendar}/>
+            <NavLink isOpen={isOpen} label='FAQ' to='/' icon={Question}/>
 
             <div className={`relative font-semibold text-gray-400 ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Diagramme</div>
             
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <ChartBar size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Barre</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <ChartPie size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Circulaire</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <ChartLineUp size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Courbe</div>
-            </Link>
-
-            <Link className={`relative flex flex-row items-end justify-center w-full hover:text-blue-400`} to="/">
-              <MapTrifold size={22} className={`relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? '-translate-x-16' :''}`}/> 
-              <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Carte</div>
-            </Link>
+            <NavLink isOpen={isOpen} label='Barre' to='/' icon={ChartBar}/>
+            <NavLink isOpen={isOpen} label='Circulaire' to='/' icon={ChartPie}/>
+            <NavLink isOpen={isOpen} label='Courbe' to='/' icon={ChartLineUp}/>
+            <NavLink isOpen={isOpen} label='Carte' to='/' icon={MapTrifold}/>
 
           </div>
 
     </div>
+  )
+}
+
+
+const NavLink = ({isOpen ,label, to, icon}) => {
+
+  return (
+    <Link className={`relative group flex flex-row items-end justify-center w-full hover:text-blue-400`} to={to}>
+      {React.createElement(icon, {size: 22, className: `relative [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'origin-[-3.5rem] -translate-x-16 group-hover:animate-vibrate-open' :' group-hover:animate-vibrate'}`})}
+      <div className={`absolute [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] ${isOpen? 'translate-x-3' :'translate-x-64'}`}>{label}</div>
+    </Link>
   )
 }
