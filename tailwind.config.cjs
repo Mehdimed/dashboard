@@ -1,11 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
     extend: {
       colors: {
-        'navbar': '#1C1B22',
-        'firefox': '#2b2a33',
+        'navbar': '#d8d8d8',
+        'dark-navbar': '#1C1B22',
+        'firefox': '#f4f4f4',
+        'dark-firefox': '#2b2a33',
+        'dark': '#2b2a33',
+        'light': '#f5f5f5',
+        'input' : '#9ca3af',
+        'dark-input' : '#4b5563',
       },
       animation: {
         'vibrate': 'vibrate 1s ease-in-out',
