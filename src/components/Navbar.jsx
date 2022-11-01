@@ -22,9 +22,9 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
             <div className={`relative font-semibold text-gray-400 ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Data</div>
 
-            <NavLink isOpen={isOpen} label='Gestion team' to='/' icon={UsersFour}/>
-            <NavLink isOpen={isOpen} label='Clients' to='/' icon={AddressBook}/>
-            <NavLink isOpen={isOpen} label='Transactions' to='/' icon={Handshake}/>
+            <NavLink isOpen={isOpen} label='Gestion team' to='/team' icon={UsersFour}/>
+            <NavLink isOpen={isOpen} label='Clients' to='/clients' icon={AddressBook}/>
+            <NavLink isOpen={isOpen} label='Transactions' to='/transactions' icon={Handshake}/>
 
             <div className={`relative font-semibold text-gray-400 ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Outils</div>
             
@@ -37,7 +37,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
             <NavLink isOpen={isOpen} label='Barre' to='/' icon={ChartBar}/>
             <NavLink isOpen={isOpen} label='Circulaire' to='/' icon={ChartPie}/>
             <NavLink isOpen={isOpen} label='Courbe' to='/' icon={ChartLineUp}/>
-            <NavLink isOpen={isOpen} label='Carte' to='/' icon={MapTrifold}/>
+            <NavLink isOpen={isOpen} label='Carte' to='/map' icon={MapTrifold}/>
 
           </div>
 

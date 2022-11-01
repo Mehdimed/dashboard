@@ -29,3 +29,7 @@ body,
   background-color: #2b2a33;
   color: #fff;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}

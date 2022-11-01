@@ -1,0 +1,89 @@
+{
+    "team": [
+        {
+            "id":1,
+            "name":"Jon Snow",
+            "email":"jonsnow@gmail.com",
+            "age":35,
+            "phone":"0789496126",
+            "access":"admin"
+        },
+        {
+            "id":2,
+            "name":"Cersei Lannister",
+            "email":"cerseilannister@gmail.com",
+            "age":42,
+            "phone":"0688794865",
+            "access":"manager"
+        },
+        {
+            "id":3,
+            "name":"Jaime Lannister",
+            "email":"jaimelannister@gmail.com",
+            "age":45,
+            "phone":"0679487954",
+            "access":"user"
+        }
+    ],
+    "clients": [
+        {
+            "id":1,
+            "name":"Jon Snow",
+            "email":"jonsnow@gmail.com",
+            "age":35,
+            "phone":"0789496126",
+            "address":"36 rue de la paix, 75000 Paris",
+            "city":"Paris",
+            "zipCode":"75000",
+            "registrarId":123512
+        },
+        {
+            "id":2,
+            "name":"Cersei Lannister",
+            "email":"cerseilannister@gmail.com",
+            "age":42,
+            "phone":"0688794865",
+            "address":"24 rue du saint, 75000 Paris",
+            "city":"Paris",
+            "zipCode":"75000",
+            "registrarId":185647
+        },
+        {
+            "id":3,
+            "name":"Jaime Lannister",
+            "email":"jaimelannister@gmail.com",
+            "age":45,
+            "phone":"0679487954",
+            "address":"57 rue du faubourg michel, 75000 Paris",
+            "city":"Paris",
+            "zipCode":"75000",
+            "registrarId":321489
+        }
+    ],
+    "transactions": [
+        {
+            "id":1,
+            "name":"Jon Snow",
+            "email":"jonsnow@gmail.com",
+            "cost":"21.24",
+            "phone":"0789496126",
+            "date":"03/12/2022"
+        },
+        {
+            "id":2,
+            "name":"Jon Snow",
+            "email":"jonsnow@gmail.com",
+            "cost":"28.99",
+            "phone":"0789496126",
+            "date":"03/12/2022"
+        },
+        {
+            "id":3,
+            "name":"Jon Snow",
+            "email":"jonsnow@gmail.com",
+            "cost":"35.65",
+            "phone":"0789496126",
+            "date":"03/12/2022"
+        }
+    ]
+  }
