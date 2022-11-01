@@ -12,7 +12,7 @@ export default function Topbar() {
     <div className="w-full h-12 flex flex-row items-center">
         <SearchInput/>
 
-        <div className="w-full flex flex-row items-center justify-end gap-4 pr-8 overflow-hidden relative">
+        <div className="w-full h-full flex flex-row items-center justify-end gap-4 pr-8 overflow-hidden relative">
             <Moon onClick={changeTheme} size={22} className={`absolute right-40 cursor-pointer ${darkMode ? 'animate-rise' : 'animate-set'} [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)]  hover:text-blue-400`}/>
             <Sun onClick={changeTheme} size={22} className={`absolute right-40 cursor-pointer ${!darkMode ? 'animate-rise' : 'animate-set'} [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)]  hover:text-blue-400`}/>
             <Bell  size={22} className="cursor-pointer [transition:color_.1s,transform_.5s_cubic-bezier(0.4,0,0.2,1)] hover:animate-vibrate hover:text-blue-400" />

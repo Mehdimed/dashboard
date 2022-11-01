@@ -30,7 +30,7 @@ module.exports = {
             transform: 'rotate(180deg)',
             opacity: 0,
          },
-         '60%': {
+         '40%': {
           opacity: 0,
          },
           '100%': { 
@@ -45,7 +45,7 @@ module.exports = {
             transform: 'rotate(0deg)',
             opacity: 1,
          },
-         '40%': {
+         '60%': {
           opacity: 0,
          },
           '100%': { 
