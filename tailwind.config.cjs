@@ -14,6 +14,9 @@ module.exports = {
         'input' : '#999999',
         'dark-input' : '#4b5563',
       },
+      boxShadow: {
+        'null': '0 0 0 0 rgba(0, 0, 0, 0)',
+      },
       animation: {
         'vibrate': 'vibrate 1s ease-in-out',
         'vibrate-open': 'vibrate-open 1s ease-in-out',
