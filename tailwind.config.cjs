@@ -11,7 +11,7 @@ module.exports = {
         'dark-firefox': '#2b2a33',
         'dark': '#2b2a33',
         'light': '#f5f5f5',
-        'input' : '#9ca3af',
+        'input' : '#999999',
         'dark-input' : '#4b5563',
       },
       animation: {

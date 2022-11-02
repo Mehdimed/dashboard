@@ -17,8 +17,10 @@ export default function Team() {
         return res.json();
       })
       .then((data) => {
+        setTimeout(() => {
         setTeam(data);
         setLoading(false);
+        }, 1000);
       });
   };
 
@@ -46,9 +48,9 @@ export default function Team() {
       <h1 className="text-2xl font-bold">Team</h1>
       <span className="text-sm">gestion des membres de l'équipe</span>
       
-      <div className=" flex flex-col gap-2 p-3 mt-6 rounded border-solid border-gray-500 border-2">
+      <div className=" flex flex-col mt-6 rounded border-solid border-gray-500 border-2 bg-navbar dark:bg-dark-navbar ease-in-out duration-500">
         
-        <div className="flex flex-row font-bold">
+        <div className="flex flex-row font-bold py-3 px-3">
           <div className="flex flex-1">Nom</div>
           <div className="flex flex-1">Email</div>
           <div className="flex flex-1 justify-center">Age</div>
@@ -60,7 +62,7 @@ export default function Team() {
 
         {!loading &&
           team.map((member) => (
-            <div className="flex flex-row border-t-2 border-solid border-gray-500" key={member.id}>
+            <div className="flex flex-row border-t-2 py-1 px-3 border-solid border-gray-500 hover:bg-firefox dark:hover:bg-dark-firefox cursor-pointer" key={member.id}>
               <div className="flex flex-1">{member.name}</div>
               <div className="flex flex-1">{member.email}</div>
               <div className="flex flex-1 justify-center">{member.age}</div>

@@ -45,7 +45,7 @@ function SearchInput() {
 
   return (
     <>
-        <input placeholder="rechercher..." className="[transition:color_.5s_cubic-bezier(0.4,0,0.2,1),background_.5s_cubic-bezier(0.4,0,0.2,1),border_.3s_cubic-bezier(0.4,0,0.2,1)] text-dark dark:text-input placeholder:text-dark dark:placeholder:text-input bg-navbar dark:bg-dark-navbar h-8 ml-3 rounded-tl-md rounded-bl-md pl-2 text-sm ease-in-out duration-500" type="text" name="search" id="search"/>
+        <input placeholder="rechercher..." className="[transition:color_.5s_cubic-bezier(0.4,0,0.2,1),background_.5s_cubic-bezier(0.4,0,0.2,1),border_.3s_cubic-bezier(0.4,0,0.2,1)] text-dark dark:text-input placeholder:text-input bg-navbar dark:bg-dark-navbar h-8 ml-3 rounded-tl-md rounded-bl-md pl-2 text-sm" type="text" name="search" id="search"/>
         <div className="[transition:color_.5s_cubic-bezier(0.4,0,0.2,1),background_.5s_cubic-bezier(0.4,0,0.2,1),border_.3s_cubic-bezier(0.4,0,0.2,1)] text-dark dark:text-light bg-navbar dark:bg-dark-navbar h-8 w-8 rounded-tr-md rounded-br-md cursor-pointer flex items-center justify-center border-2 border-solid border-transparent hover:border-dark-input dark:hover:border-input ">
             <MagnifyingGlass  size={22} />
         </div>
