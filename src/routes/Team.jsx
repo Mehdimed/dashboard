@@ -114,7 +114,7 @@ export default function Team() {
 
       <div className="absolute bottom-4 right-32 flex flex-row justify-center gap-2">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-[20px_0.25rem_0.25rem_20px]"
           onClick={() => fetchTeam(links.first)}
         >
           &lt;&lt;
@@ -132,7 +132,7 @@ export default function Team() {
           suivant
         </button>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-[0.25rem_20px_20px_0.25rem]"
           onClick={() => fetchTeam(links.last)}
         >
           &gt;&gt;
