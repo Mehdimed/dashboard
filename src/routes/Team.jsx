@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { teamData } from "../../db";
+import { Backspace, ShieldCheckered, Trash, User, Users } from 'phosphor-react'
+
+
+let teamCopy = [...teamData];
 
 export default function Team() {
   const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const limit = 13;
-  const maxPage = Math.ceil(teamData.length / limit);
+  const maxPage = Math.ceil(teamCopy.length / limit);
 
   useEffect(() => {
     fetchTeam(page , limit);
@@ -21,10 +25,30 @@ export default function Team() {
     }, (Math.random() * 500) + 500);
   };
 
+  const deleteMember = (id) => {
+    teamCopy = teamCopy.filter((member) => member.id !== id);
+    setTeam(extractData(page, limit));
+  };
+
+  const deleteAllSelected = () => {
+    const checkboxes = document.querySelectorAll('.userbox');
+    const adminbox = document.querySelector('.adminbox');
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        teamCopy = teamCopy.filter((member) => member.id != checkbox.id);
+        console.log(teamCopy);
+      }
+    });
+    setTeam(extractData(page, limit));
+    adminbox.checked = false;
+  };
+
+
+
   const extractData = (page, limit = 13) => {
     const start = (page - 1) * limit;
     const end = start + limit;
-    return teamData.slice(start, end);
+    return teamCopy.slice(start, end);
   };
 
   const toggleAll = () => {
@@ -62,6 +86,12 @@ export default function Team() {
           <div className="flex flex-1 justify-center">Age</div>
           <div className="flex flex-1">Tél</div>
           <div className="flex flex-1">Role</div>
+          <div 
+            className="flex flex-[0.1] text-red-500 dark:text-rose-600 ease-in-out duration-500 hover:animate-vibrate cursor-pointer"
+            onClick={deleteAllSelected}
+          >
+            <Backspace className="w-8 h-8"/>
+          </div>
         </div>
 
         {loading && 
@@ -82,6 +112,7 @@ export default function Team() {
             >
               <input 
                 type="checkbox"
+                id={member.id}
                 className="userbox accent-dark-firefox w-4 h-4 cursor-pointer"
                 onClick={(e) => e.stopPropagation()}
               />
@@ -89,7 +120,23 @@ export default function Team() {
               <div className="flex flex-1">{member.email}</div>
               <div className="flex flex-1 justify-center">{member.age}</div>
               <div className="flex flex-1">{member.phone}</div>
-              <div className="flex flex-1">{member.access}</div>
+              <div className="flex flex-1">
+                <div className="rounded gap-1 flex flex-row items-center px-1 ease-in-out duration-500 text-white bg-green-400 dark:bg-green-700">
+                  {member.access === 'admin' && <ShieldCheckered/>}
+                  {member.access === 'manager' && <Users/>}
+                  {member.access === 'user' && <User/>}
+                  {member.access}
+                </div>
+              </div>
+              <div 
+                className="flex flex-[0.1] text-red-500 dark:text-rose-600 ease-in-out duration-500 hover:animate-vibrate"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteMember(member.id);
+                }}
+              >
+                <Trash className="w-6 h-6"/>
+              </div>
             </div>
           ))}
 
@@ -98,7 +145,7 @@ export default function Team() {
       <div className="absolute bottom-4 right-32 flex flex-row justify-center gap-2">
         <button
           className={`text-white py-2 px-4 rounded-[20px_0.25rem_0.25rem_20px] ${page > 1 && !loading ? "bg-blue-500 hover:bg-blue-700" :" bg-gray-500 cursor-default"}`}
-          onClick={() => fetchTeam('first')}
+          onClick={() => fetchTeam(1)}
         >
           &lt;&lt;
         </button>
@@ -116,7 +163,7 @@ export default function Team() {
         </button>
         <button
           className={`text-white py-2 px-4 rounded-[0.25rem_20px_20px_0.25rem] ${page < maxPage && !loading ? "bg-blue-500 hover:bg-blue-700" :" bg-gray-500 cursor-default"}`}
-          onClick={() => fetchTeam('last')}
+          onClick={() => fetchTeam(maxPage)}
         >
           &gt;&gt;
         </button>
