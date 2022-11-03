@@ -30,7 +30,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
             
             <NavLink isOpen={isOpen} label='Ajout client' to='/' icon={UserCirclePlus}/>
             <NavLink isOpen={isOpen} label='Calendrier' to='/' icon={Calendar}/>
-            <NavLink isOpen={isOpen} label='FAQ' to='/' icon={Question}/>
+            <NavLink isOpen={isOpen} label='FAQ' to='/faq' icon={Question}/>
 
             <div className={`relative font-semibold dark:text-input ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Diagramme</div>
             

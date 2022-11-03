@@ -23,6 +23,10 @@ module.exports = {
         'rise': 'rise 1s ease-in-out forwards',
         'set': 'set 1s ease-in-out forwards',
       },
+      transitionProperty: {
+        'max-height': 'max-height',
+        'max-width': 'max-width',
+      },
       keyframes: {
         'vibrate': {
           '0%, 100%': { transform: 'rotate(0deg)' },

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import Dashboard from './routes/Dashboard'
 import Map from './routes/Map'
 import Clients from './routes/Clients'
+import FAQ from './routes/FAQ'
 import Team from './routes/Team'
 import Transactions from './routes/Transactions'
 import Layout from './Layout'
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/team' element={<Team/>}/>
           <Route path='/transactions' element={<Transactions/>}/>
           <Route path='/map' element={<Map/>}/>
+          <Route path='/faq' element={<FAQ/>}/>
 
         </Route>
       </Routes>
