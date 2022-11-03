@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { MagnifyingGlass, User, Bell, Gear, Moon, Sun } from "phosphor-react"
 
 
-export default function Topbar() {
+export default function Topbar({ darkMode, setDarkMode }) {
     
-    const [darkMode, setDarkMode] = useState(true);
+    
     const [swapping, setSwapping] = useState(false);
     const root = document.documentElement;
   

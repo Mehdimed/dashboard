@@ -34,9 +34,9 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
             <div className={`relative font-semibold dark:text-input ease-in-out duration-500 ${isOpen? 'translate-x-3' :'translate-x-64'}`}>Diagramme</div>
             
-            <NavLink isOpen={isOpen} label='Barre' to='/' icon={ChartBar}/>
-            <NavLink isOpen={isOpen} label='Circulaire' to='/' icon={ChartPie}/>
-            <NavLink isOpen={isOpen} label='Courbe' to='/' icon={ChartLineUp}/>
+            <NavLink isOpen={isOpen} label='Barre' to='/bar' icon={ChartBar}/>
+            <NavLink isOpen={isOpen} label='Circulaire' to='/pie' icon={ChartPie}/>
+            <NavLink isOpen={isOpen} label='Courbe' to='/line' icon={ChartLineUp}/>
             <NavLink isOpen={isOpen} label='Carte' to='/map' icon={MapTrifold}/>
 
           </div>
